@@ -26,7 +26,7 @@ async function main() {
   const zone = process.argv[process.argv.indexOf('--zone-id') + 1];
   const at = process.argv.indexOf('--rule-target');
   const targets = at === -1 ? [] : process.argv.slice(at + 1).filter((a) => !a.startsWith('--'));
-  const token = (process.env.CF_API_TOKEN || "dummy-cf-api-token");
+  const token = (process.env.CF_API_TOKEN || "");
   if (!token) { console.error('set CF_API_TOKEN'); process.exit(2); }
 
   const res = await fetch(`${API}/zones/${zone}/dns_records?per_page=500`,

@@ -35,7 +35,7 @@ async function main() {
   const originForces = process.argv.includes('--origin-forces-https');
   const apply = process.argv.includes('--apply');
   const setMode = process.argv[process.argv.indexOf('--set-mode') + 1];
-  const token = (process.env.CF_API_TOKEN || "dummy-cf-api-token");
+  const token = (process.env.CF_API_TOKEN || "");
   if (!token) { console.error('set CF_API_TOKEN'); process.exit(2); }
   const headers = { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' };
 

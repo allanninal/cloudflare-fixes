@@ -30,7 +30,7 @@ async function main() {
   const zone = process.argv[process.argv.indexOf('--zone-id') + 1];
   const ui = process.argv.indexOf('--url');
   const urls = process.argv.slice(ui + 1).filter((a) => !a.startsWith('--'));
-  const token = (process.env.CF_API_TOKEN || "dummy-cf-api-token");
+  const token = (process.env.CF_API_TOKEN || "");
   if (!token) { console.error('set CF_API_TOKEN'); process.exit(2); }
 
   const res = await fetch(`${API}/zones/${zone}/pagerules`,

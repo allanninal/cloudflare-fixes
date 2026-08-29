@@ -56,7 +56,7 @@ async function main() {
       console.log(`${name.trim()} is a known cache-key header -- good that you passed it`);
     }
   });
-  const token = (process.env.CF_API_TOKEN || "dummy-cf-api-token");
+  const token = (process.env.CF_API_TOKEN || "");
   if (!token) { console.error('set CF_API_TOKEN'); process.exit(2); }
 
   if (!apply) {
